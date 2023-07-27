@@ -1,0 +1,132 @@
+/*Pages.css*/
+header {
+    background-color: #2A2C30; /* צבע רקע */
+    padding: 12px; /* מרווח פנימי ב-header */
+}
+
+.logo {
+    width: 70px; /* רוחב של הלוגו */
+    height: auto; /* גובה אוטומטי מתאים ליחס המקורי */
+}
+
+/* עיצוב של כותרת ראשית */
+h1 {
+    font-size: 35px; /* גודל הכתב */
+    font-weight: 500; /* משקל הכתב */
+    font-family: 'Roboto', sans-serif; /* סוג הכתב עם גיליון חירום אם אריאל אינו זמין */
+    line-height: 1.5; /* גובה גדול יותר */
+    color: #FFFFFF;
+    padding: 0px 0px; /* מרווח פנימי לקישורים והכותרות */
+    text-decoration: none; /* מחיקת קו תחתון מקישורים */
+    text-align: center;
+    margin-bottom: 20px; /* מרווח בין הכותרת לכפתורים */
+}
+
+/* עיצוב ה-body */
+body {
+    background-color: #2A2C30;
+    font-family: "Roboto", sans-serif;
+}
+
+/* עיצוב של כותרות משניות וקישורים */
+h2, a {
+    color: #FFFFFF;
+    font-weight: 250 ; /* משקל הכתב */
+    border: 0px solid #C3780F;
+    padding: 5px 10px; /* מרווח פנימי לקישורים והכותרות */
+    text-decoration: none; /* מחיקת קו תחתון מקישורים */
+    text-align: center;
+    font-size: 25px;
+}
+
+/* עיצוב הפוטר */
+footer {
+    background-color: #2A2C30; /* צבע רקע */
+    padding: 0px; /* מרווח פנימי בפוטר */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* יישור אנכי לאמצע העמוד */
+    margin-top: 30px /*מרווח מהכפתורים שמעל
+}
+
+footer img {
+    margin-bottom: 0px; /* מרווח מתחת ללוגו כדי ליצור רווח בין הלוגו לטקסט */
+}
+
+footer p {
+    color: #C3780F;
+    margin: 10px;
+}
+
+
+/* עיצוב הכפתורים */
+.buttons {
+    display: flex;
+    flex-direction: column; /* סידור האלמנטים בעמודה אחת */
+    align-items: center; /* ייצוב האלמנטים לאמצע העמוד */
+    margin-top: 0px; /* מרווח מעל הכפתורים */
+}
+
+/* עיצוב הכפתורים */
+.buttons h2,
+.buttons a {
+    display: flex; /* שימוש ב-flex כדי למרכז את הטקסט */
+    justify-content: center; /* מרכוז את הטקסט באופן אופקי */
+    align-items: center; /* מרכוז את הטקסט באופן אנכי */
+    margin: 15px; /* מרווח בין הכפתורים */
+    background-color: #C3780F; /* צבע רקע */
+    cursor: pointer;
+    transition: all 0.6s ease;
+    width: 280px; /* רוחב הכפתורים */
+    height: 38px; /* גובה הכפתורים */
+    border: none; /* מסירת ה-border */
+    position: relative; /* הוספת מאפיין זה כדי לאפשר שימוש ב-:before ו-:after */
+    z-index: 1; /* עליה של הכפתור מעל השכבה הצבע הצדדית */
+    border-radius: 20%;
+}
+
+.buttons h2::before,
+.buttons a::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    width: 0%; /* תחילה אין צבע צדדי */
+    height: 100%;
+    background-color: #42444b; /* צבע צדדי כאשר העכבר עובר מעל הכפתור */
+    border-radius: 20%;
+    transition: width 0.6s; /* אנימציה כאשר העכבר עובר מעל הכפתור */
+}
+
+.buttons h2:hover:before,
+.buttons a:hover:before {
+    width: 100%; /* רוחב צדדי מלא כאשר העכבר עובר מעל הכפתור */
+    z-index: -1; /* הקישור עדיין מוקדם מהצבע הצדדי גם במצב ההובר */
+} 
+
+
+.back-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 30px;
+    border-radius: 20%;
+    background-color: #10746c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+.back-link:hover {
+    background-color: #42444b; /* צבע רקע בעת העברת עכבר */
+}
+
+.back-icon {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff;
+    margin-right: 10px; /* מרווח מימין */
+}

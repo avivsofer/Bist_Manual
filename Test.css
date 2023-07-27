@@ -1,0 +1,42 @@
+
+    /* עיצוב הכפתורים */
+    .buttons {
+        display: flex;
+        flex-direction: column; /* סידור האלמנטים בעמודה אחת */
+        align-items: center; /* ייצוב האלמנטים לאמצע העמוד */
+    }
+    
+    /* עיצוב הכפתורים */
+    .buttons h2,
+    .buttons a {
+        display: flex; /* שימוש ב-flex כדי למרכז את הטקסט */
+        justify-content: center; /* מרכוז את הטקסט באופן אופקי */
+        align-items: center; /* מרכוז את הטקסט באופן אנכי */
+        margin: 22px; /* מרווח בין הכפתורים */
+        background-color: #C3780F; /* צבע רקע */
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 280px; /* רוחב הכפתורים */
+        height: 38px; /* גובה הכפתורים */
+        border: none; /* מסירת ה-border */
+        position: relative; /* הוספת מאפיין זה כדי לאפשר שימוש ב-:before ו-:after */
+        z-index: 1; /* עליה של הכפתור מעל השכבה הצבע הצדדית */
+    }
+    
+    .buttons h2::before,
+    .buttons a::before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        width: 0%; /* תחילה אין צבע צדדי */
+        height: 120%;
+        background-color: #42444b; /* צבע צדדי כאשר העכבר עובר מעל הכפתור */
+        transition: width 0.6s; /* אנימציה כאשר העכבר עובר מעל הכפתור */
+        z-index: -1; /* הקישור מוקדם מהצבע הצדדי כדי להראות אותו */
+    }
+    
+    .buttons h2:hover::before,
+    .buttons a:hover::before {
+        width: 110%; /* רוחב צדדי מלא כאשר העכבר עובר מעל הכפתור */
+        z-index: -1; /* הקישור עדיין מוקדם מהצבע הצדדי גם במצב ההובר */
+    } 
